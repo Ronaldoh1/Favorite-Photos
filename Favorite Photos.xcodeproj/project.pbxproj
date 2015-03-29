@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		F2961DFB1AC729CB00035ECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2961DFA1AC729CB00035ECA /* main.m */; };
 		F2961DFE1AC729CB00035ECA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2961DFD1AC729CB00035ECA /* AppDelegate.m */; };
-		F2961E011AC729CB00035ECA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2961E001AC729CB00035ECA /* ViewController.m */; };
+		F2961E011AC729CB00035ECA /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2961E001AC729CB00035ECA /* RootViewController.m */; };
 		F2961E041AC729CB00035ECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2961E021AC729CB00035ECA /* Main.storyboard */; };
 		F2961E061AC729CB00035ECA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2961E051AC729CB00035ECA /* Images.xcassets */; };
 		F2961E091AC729CB00035ECA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2961E071AC729CB00035ECA /* LaunchScreen.xib */; };
 		F2961E151AC729CB00035ECA /* Favorite_PhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2961E141AC729CB00035ECA /* Favorite_PhotosTests.m */; };
+		F2961E201AC7349500035ECA /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2961E1F1AC7349500035ECA /* ImageDownloader.m */; };
+		F2961E231AC7463B00035ECA /* IGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F2961E221AC7463B00035ECA /* IGImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		F2961DFA1AC729CB00035ECA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F2961DFC1AC729CB00035ECA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F2961DFD1AC729CB00035ECA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F2961DFF1AC729CB00035ECA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F2961E001AC729CB00035ECA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F2961DFF1AC729CB00035ECA /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F2961E001AC729CB00035ECA /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		F2961E031AC729CB00035ECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2961E051AC729CB00035ECA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F2961E081AC729CB00035ECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F2961E0E1AC729CB00035ECA /* Favorite PhotosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Favorite PhotosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2961E131AC729CB00035ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2961E141AC729CB00035ECA /* Favorite_PhotosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Favorite_PhotosTests.m; sourceTree = "<group>"; };
+		F2961E1E1AC7349500035ECA /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
+		F2961E1F1AC7349500035ECA /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		F2961E211AC7463B00035ECA /* IGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGImage.h; sourceTree = "<group>"; };
+		F2961E221AC7463B00035ECA /* IGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +89,12 @@
 			children = (
 				F2961DFC1AC729CB00035ECA /* AppDelegate.h */,
 				F2961DFD1AC729CB00035ECA /* AppDelegate.m */,
-				F2961DFF1AC729CB00035ECA /* ViewController.h */,
-				F2961E001AC729CB00035ECA /* ViewController.m */,
+				F2961DFF1AC729CB00035ECA /* RootViewController.h */,
+				F2961E001AC729CB00035ECA /* RootViewController.m */,
+				F2961E211AC7463B00035ECA /* IGImage.h */,
+				F2961E221AC7463B00035ECA /* IGImage.m */,
+				F2961E1E1AC7349500035ECA /* ImageDownloader.h */,
+				F2961E1F1AC7349500035ECA /* ImageDownloader.m */,
 				F2961E021AC729CB00035ECA /* Main.storyboard */,
 				F2961E051AC729CB00035ECA /* Images.xcassets */,
 				F2961E071AC729CB00035ECA /* LaunchScreen.xib */,
@@ -219,8 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2961E011AC729CB00035ECA /* ViewController.m in Sources */,
+				F2961E231AC7463B00035ECA /* IGImage.m in Sources */,
+				F2961E011AC729CB00035ECA /* RootViewController.m in Sources */,
 				F2961DFE1AC729CB00035ECA /* AppDelegate.m in Sources */,
+				F2961E201AC7349500035ECA /* ImageDownloader.m in Sources */,
 				F2961DFB1AC729CB00035ECA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
