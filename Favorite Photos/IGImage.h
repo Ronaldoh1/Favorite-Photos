@@ -12,7 +12,7 @@
 @interface IGImage : NSObject
 @property NSString *idNumber;
 @property NSURL *imageURL;
-@property UIImage *image;
+@property UIImage *imageToDisplay;
 @property double latitude;
 @property double longitude;
 

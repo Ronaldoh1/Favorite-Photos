@@ -20,7 +20,7 @@
 
     self.imageURL = [NSURL URLWithString:[someInnerDictionary objectForKey:@"url"]];
     //get the image
-    self.image = [UIImage imageWithData: [NSData dataWithContentsOfURL:self.imageURL]];
+    self.imageToDisplay = [UIImage imageWithData: [NSData dataWithContentsOfURL:self.imageURL]];
 
     //ONlY SET THE LATITUDE AND LONGITUDE IF IT THEY EXIST
     if(!([dictionary objectForKey:@"location"] == [NSNull null])){

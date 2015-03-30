@@ -9,12 +9,14 @@
 #import "RootViewController.h"
 #import "IGImage.h"
 #import "ImageDownloader.h"
+#import "CustomUICollectionViewCell.h"
 
 @interface RootViewController ()<IGImageDownloaderDelegate, UITabBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property ImageDownloader *downloader;
 @property NSMutableArray *igImageObjectArray;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 
 
 
@@ -32,11 +34,13 @@
     self.downloader.parentVC = self;
     //Call method to pull the images from image downloader class.
     [self.downloader pullImagesFromIGAPI];
+    //register custom class for use. This needs to be done before collection view is loads and is displayed.
+    [self setupCollectionView];
 
     self.igImageObjectArray = [NSMutableArray new];
 
 
-
+    
 
 
 
@@ -109,10 +113,62 @@
 
         IGImage *igImage = [[IGImage alloc]initWithMediaDictionary:dict];
         [self.igImageObjectArray addObject:igImage];
+        [self.collectionView reloadData];
 
     }
     
  }
+-(void)setupCollectionView{
+    [self.collectionView registerClass:[CustomUICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    [flowLayout setMinimumInteritemSpacing:0.0f];
+    [flowLayout setMinimumLineSpacing:0.0f];
+    [self.collectionView setPagingEnabled:YES];
+    [self.collectionView setCollectionViewLayout:flowLayout];
+    [self.collectionView reloadData];
+}
+
+#pragma Marks UICollectionViewDelegates
+
+//neeed to get the number of sectiosn. For this app we only need a single section to display photos.
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+
+    return 1;
+}
+
+//need to tell the collection view how many items it will display.
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    [self.collectionView reloadData];
+
+    return self.igImageObjectArray.count;
+}
+
+//Feed the cells with data (images to display)
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CustomUICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+
+//    NSString *imageName = [self.dataArray objectAtIndex:indexPath.row];
+//    [cell setImageName:imageName];
+
+    NSLog(@"%@", [[self.igImageObjectArray objectAtIndex:0]imageToDisplay]);
+     UIImage *image = [[self.igImageObjectArray objectAtIndex:indexPath.row]imageToDisplay];
+
+//    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+//    [self.imageView setImage:image];
+
+    cell.imageView.image = image;
+
+
+  //  cell.imageView.image = image;
+    //[cell updateCell:image];
+   // [cell updateCell:[self.igImageObjectArray[indexPath.row]imageView].image];
+
+    return cell;
+}
+
 
 
 
